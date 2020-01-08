@@ -17,6 +17,8 @@ RUN conda install -c bioconda/label/cf201901 repeatmasker
 RUN conda install -c bioconda blast=2.5.0
 RUN conda install -y -c anaconda biopython pandas glob2 python=3.6
 RUN conda install -y -c anaconda scikit-learn=0.19.0
+RUN apt-get update && apt-get install -y python-pip
+RUN python2 -m pip install --user numpy==1.14.3 biopython==1.74
 
 ### Install Genetic Repeat Finder
 RUN apt-get update && apt-get install -y build-essential
