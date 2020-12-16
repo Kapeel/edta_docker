@@ -9,6 +9,7 @@ RUN conda config --add channels r
 RUN conda create -n EDTA
 RUN conda install -c bioconda repeatmodeler mdust
 RUN conda install -c bioconda edta 
+RUN conda install tensorflow 'h5py<3.0.0'
 ## Install Repeat Masker libraries steps included courtesy @wangshun1211 for contributions
 RUN cd /opt && wget https://github.com/lfaino/LoReAn/raw/noIPRS/third_party/software/RepeatMasker.Libraries.tar.gz && \
     tar -zxf RepeatMasker.Libraries.tar.gz && rm -rf /opt/conda/share/RepeatMasker/Libraries && \
